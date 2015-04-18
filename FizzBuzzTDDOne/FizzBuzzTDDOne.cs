@@ -2,9 +2,6 @@ using System;
 
 namespace FizzBuzzTDDOne
 {
-	/// <summary>
-	/// Description of FizzBuzzTDDOne.
-	/// </summary>
 	public static class FizzBuzzTDDOne
 	{
 		public static string FizzBuzzOrNumber(int numberToMap)
