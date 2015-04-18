@@ -2,9 +2,6 @@ using System;
 
 namespace FizzBuzzChainOfResponsibility
 {
-	/// <summary>
-	/// Description of PredicateAndStringHandler.
-	/// </summary>
 	public abstract class PredicateAndStringHandler:NumberHandler
 	{
 		private readonly NumberHandler succesor;

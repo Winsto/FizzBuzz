@@ -2,9 +2,6 @@ using System;
 
 namespace FizzBuzzChainOfResponsibility
 {
-	/// <summary>
-	/// Description of DefaultHandler.
-	/// </summary>
 	public class DefaultHandler : NumberHandler
 	{
 #region NumberHandler implementation
