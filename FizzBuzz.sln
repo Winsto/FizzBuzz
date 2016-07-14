@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FizzBuzzTDDOneUnitTests", "FizzBuzzTDDOneUnitTests\FizzBuzzTDDOneUnitTests.csproj", "{91150A51-025D-4BF1-8DF4-F63203812047}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FizzBuzzOneLiner", "FizzBuzzOneLiner\FizzBuzzOneLiner.csproj", "{E34A3D5D-5705-4155-8B57-12201FD03C04}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FizzBuzzLINQOne", "FizzBuzzLINQOne\FizzBuzzLINQOne.csproj", "{A300D318-6D5E-45E9-9073-12E9FC21CB39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zip-a-Dee-Doo-Dah", "Zip-a-Dee-Doo-Dah\Zip-a-Dee-Doo-Dah.csproj", "{E6185EF1-43E8-4B0D-94A8-56E1B84C58A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{A300D318-6D5E-45E9-9073-12E9FC21CB39}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A300D318-6D5E-45E9-9073-12E9FC21CB39}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A300D318-6D5E-45E9-9073-12E9FC21CB39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6185EF1-43E8-4B0D-94A8-56E1B84C58A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6185EF1-43E8-4B0D-94A8-56E1B84C58A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6185EF1-43E8-4B0D-94A8-56E1B84C58A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6185EF1-43E8-4B0D-94A8-56E1B84C58A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
