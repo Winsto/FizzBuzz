@@ -2,5 +2,6 @@
 {
     public interface Buzz
     {
+        FizzBuzzOrNumber Append(Number number);
     }
 }

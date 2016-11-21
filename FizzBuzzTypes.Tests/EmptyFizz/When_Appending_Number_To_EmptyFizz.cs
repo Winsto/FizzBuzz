@@ -1,4 +1,4 @@
-﻿namespace FizzBuzzTypes.Tests.EmptyFizz
+﻿namespace FizzBuzzTypes.Tests
 {
     using Machine.Specifications;
     using EmptyFizz = FizzBuzzTypes.EmptyFizz;
