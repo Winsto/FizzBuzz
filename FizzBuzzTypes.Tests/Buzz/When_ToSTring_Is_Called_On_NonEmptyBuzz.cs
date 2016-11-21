@@ -5,7 +5,7 @@
     using Machine.Specifications.Model;
 
     [Subject(typeof (NonEmptyBuzz), "NonEmptyBuzz")]
-    public class When_Calling_ToSTring_On_NonEmptyBuzz
+    public class When_ToSTring_Is_Called_On_NonEmptyBuzz
     {
         private Establish context = () =>
         {

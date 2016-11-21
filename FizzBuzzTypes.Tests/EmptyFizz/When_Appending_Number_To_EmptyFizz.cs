@@ -15,7 +15,7 @@
         {
             Result =
                 Subject
-                    .Append(new Number());
+                    .Append(new Number(int.MaxValue));
         };
 
         It result_is_number = () => Result.ShouldBeOfExactType<Number>();

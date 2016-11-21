@@ -5,7 +5,7 @@
     using Machine.Specifications.Model;
 
     [Subject(typeof(NonEmptyFizz), "NonEmptyFizz")]
-    public class When_Calling_ToString_On_NonEmptyFizz
+    public class When_ToString_Is_Called_On_NonEmptyFizz
     {
         private Establish context = () =>
         {

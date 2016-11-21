@@ -14,7 +14,7 @@ namespace FizzBuzzTypes.Tests
         {
             Result =
                 Subject
-                    .Append(new Number());
+                    .Append(new Number(int.MinValue));
         };
 
         private It result_is_nonemptyBuzz = () => Result.ShouldBeOfExactType<NonEmptyBuzz>();
