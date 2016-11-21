@@ -50,9 +50,13 @@
     <Reference Include="System.Xml.Serialization" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmptyFizz\When_Appending_EmptyBuzz_To_EmptyFizz.cs" />
+    <Compile Include="EmptyFizz\When_Appending_NonEmptyBuzz_To_EmptyFizz.cs" />
+    <Compile Include="EmptyFizz\When_Appending_Number_To_EmptyFizz.cs" />
+    <Compile Include="NonEmptyFizz\When_Appending_EmptyBuzz_To_NonEmptyFizz.cs" />
+    <Compile Include="NonEmptyFizz\When_Appending_NonEmptyBuzz_To_NonEmptyFizz.cs" />
+    <Compile Include="NonEmptyFizz\When_Appending_Number_To_NonEmptyFizz.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="When_Appending_NonEmptyBuzz_To_EmptyFizz.cs" />
-    <Compile Include="When_Appending_Number_To_EmptyFizz.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

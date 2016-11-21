@@ -1,9 +1,10 @@
-﻿namespace FizzBuzzTypes.Tests
+namespace FizzBuzzTypes.Tests.EmptyFizz
 {
     using Machine.Specifications;
+    using EmptyFizz = FizzBuzzTypes.EmptyFizz;
 
     [Subject(typeof(EmptyFizz), "EmptyFizz")]
-    public class When_Appending_Number_To_EmptyFizz
+    public class When_Appending_EmptyBuzz_To_EmptyFizz
     {
         Establish context = () =>
         {
@@ -14,10 +15,10 @@
         {
             Result =
                 Subject
-                    .Append(new Number());
+                    .Append(new EmptyBuzz());
         };
 
-        It result_is_number = () => Result.ShouldBeOfExactType<Number>();
+        It result_is_emptyfizz = () => Result.ShouldBeOfExactType<EmptyFizz>();
 
 
         static EmptyFizz Subject;

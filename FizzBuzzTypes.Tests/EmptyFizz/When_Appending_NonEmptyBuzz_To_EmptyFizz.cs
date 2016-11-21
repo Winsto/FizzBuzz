@@ -1,7 +1,7 @@
-﻿namespace FizzBuzzTypes.Tests
+﻿namespace FizzBuzzTypes.Tests.EmptyFizz
 {
     using Machine.Specifications;
-    using Machine.Specifications.Model;
+    using EmptyFizz = FizzBuzzTypes.EmptyFizz;
 
     [Subject(typeof(EmptyFizz), "EmptyFizz")]
     public class When_Appending_NonEmptyBuzz_To_EmptyFizz
