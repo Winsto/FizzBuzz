@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="When_Appending_NonEmptyBuzz_To_EmptyFizz.cs" />
+    <Compile Include="When_Appending_Number_To_EmptyFizz.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -6,5 +6,10 @@
         {
             return buzz;
         }
+
+        public FizzBuzzOrNumber Append(Number number)
+        {
+            return number;
+        }
     }
 }

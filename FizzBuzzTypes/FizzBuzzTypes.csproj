@@ -45,6 +45,7 @@
     <Compile Include="Fizz.cs" />
     <Compile Include="FizzBuzzOrNumber.cs" />
     <Compile Include="NonEmptyBuzz.cs" />
+    <Compile Include="Number.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
