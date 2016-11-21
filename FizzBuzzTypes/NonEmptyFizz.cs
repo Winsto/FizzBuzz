@@ -2,6 +2,11 @@ namespace FizzBuzzTypes
 {
     public class NonEmptyFizz : Fizz, FizzBuzzOrNumber
     {
+        public override string ToString()
+        {
+            return "Fizz";
+        }
+
         public FizzBuzzOrNumber Append(NonEmptyBuzz buzz)
         {
             return new FizzBuzz();
