@@ -1,10 +1,9 @@
 namespace FizzBuzzTypes.Tests
 {
     using Machine.Specifications;
-    using FizzBuzzTypes;
 
     [Subject(typeof(NonEmptyFizz), "NonEmptyFizz")]
-    public class When_Appending_NonEmptyBuzz_To_NonEmptyFizz
+    public class When_Appending_EmptyBuzz_To_NonEmptyFizz
     {
         Establish context = () =>
         {
@@ -15,10 +14,12 @@ namespace FizzBuzzTypes.Tests
         {
             Result =
                 Subject
-                    .Append(new NonEmptyBuzz());
+                    .Append(new EmptyBuzz());
         };
 
-        It result_is_fizzbuzz = () => Result.ShouldBeOfExactType<FizzBuzz>();
+        It result_is_fizzbuzz = () => Result.ShouldBeOfExactType<NonEmptyFizz>();
+
+        It result_is_numberappender = () => Result.ShouldBeAssignableTo<NumberAppender>();
 
 
         static NonEmptyFizz Subject;

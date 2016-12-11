@@ -2,7 +2,6 @@
 {
     using System;
     using Machine.Specifications;
-    using Machine.Specifications.Model;
 
     [Subject(typeof (NonEmptyBuzz), "NonEmptyBuzz")]
     public class When_ToSTring_Is_Called_On_NonEmptyBuzz

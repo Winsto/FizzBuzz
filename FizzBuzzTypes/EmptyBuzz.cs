@@ -1,8 +1,8 @@
 namespace FizzBuzzTypes
 {
-    public class EmptyBuzz : Buzz
+    public class EmptyBuzz : NumberAppender
     {
-        public FizzBuzzOrNumber Append(Number number)
+        public object Append(Number number)
         {
             return number;
         }

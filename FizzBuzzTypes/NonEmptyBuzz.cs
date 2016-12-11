@@ -1,13 +1,13 @@
 ﻿namespace FizzBuzzTypes
 {
-    public class NonEmptyBuzz : Buzz, FizzBuzzOrNumber
+    public class NonEmptyBuzz : NumberAppender
     {
         public override string ToString()
         {
             return "Buzz";
         }
 
-        public FizzBuzzOrNumber Append(Number number)
+        public object Append(Number number)
         {
             return this;
         }

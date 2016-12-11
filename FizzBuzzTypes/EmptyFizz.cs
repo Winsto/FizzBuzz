@@ -1,20 +1,15 @@
 ﻿namespace FizzBuzzTypes
 {
-    public class EmptyFizz : Fizz, FizzBuzzOrNumber
+    public class EmptyFizz : BuzzAppender
     {
-        public FizzBuzzOrNumber Append(NonEmptyBuzz buzz)
+        public NumberAppender Append(NonEmptyBuzz buzz)
         {
             return buzz;
         }
 
-        public FizzBuzzOrNumber Append(Number number)
+        public NumberAppender Append(EmptyBuzz buzz)
         {
-            return number;
-        }
-
-        public FizzBuzzOrNumber Append(EmptyBuzz buzz)
-        {
-            return this;
+            return buzz;
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace FizzBuzzTypes
 {
-    public class Number : FizzBuzzOrNumber
+    public class Number
     {
         private int inputNumber;
 

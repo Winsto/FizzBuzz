@@ -21,7 +21,7 @@
 
         private It result_is_fizz = () => 
             Result
-                .Equals("Fizz", StringComparison.OrdinalIgnoreCase)
+                .Equals("BuzzAppender", StringComparison.OrdinalIgnoreCase)
                 .ShouldBeTrue();
 
         private static NonEmptyFizz Subject;

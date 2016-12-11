@@ -40,12 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Buzz.cs" />
+    <Compile Include="NumberAppender.cs" />
     <Compile Include="EmptyBuzz.cs" />
     <Compile Include="EmptyFizz.cs" />
-    <Compile Include="Fizz.cs" />
+    <Compile Include="BuzzAppender.cs" />
     <Compile Include="FizzBuzz.cs" />
-    <Compile Include="FizzBuzzOrNumber.cs" />
     <Compile Include="NonEmptyBuzz.cs" />
     <Compile Include="NonEmptyFizz.cs" />
     <Compile Include="Number.cs" />

@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using FizzBuzzTDDOne;
 using NUnit.Framework;
 
 namespace FizzBuzzTDDOneUnitTests

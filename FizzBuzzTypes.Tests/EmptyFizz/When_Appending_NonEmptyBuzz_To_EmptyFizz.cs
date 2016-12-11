@@ -1,7 +1,6 @@
 ﻿namespace FizzBuzzTypes.Tests
 {
     using Machine.Specifications;
-    using EmptyFizz = FizzBuzzTypes.EmptyFizz;
 
     [Subject(typeof(EmptyFizz), "EmptyFizz")]
     public class When_Appending_NonEmptyBuzz_To_EmptyFizz
@@ -22,6 +21,6 @@
 
 
         static EmptyFizz Subject;
-        static FizzBuzzOrNumber Result;
+        static object Result;
     }
 }

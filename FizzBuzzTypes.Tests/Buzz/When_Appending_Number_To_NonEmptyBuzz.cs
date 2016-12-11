@@ -1,27 +1,28 @@
 namespace FizzBuzzTypes.Tests
 {
     using Machine.Specifications;
+    using FizzBuzzTypes;
 
     [Subject(typeof(NonEmptyBuzz),"NonEmptyBuzz")]
     public class When_Appending_Number_To_NonEmptyBuzz
     {
-        private Establish context = () =>
+        Establish context = () =>
         {
             Subject = new NonEmptyBuzz();
         };
 
-        private Because of = () =>
+        Because of = () =>
         {
             Result =
                 Subject
                     .Append(new Number(int.MinValue));
         };
 
-        private It result_is_nonemptyBuzz = () => Result.ShouldBeOfExactType<NonEmptyBuzz>();
+        It result_is_nonemptyBuzz = () => Result.ShouldBeOfExactType<NonEmptyBuzz>();
 
 
 
-        private static NonEmptyBuzz Subject;
-        private static FizzBuzzOrNumber Result;
+        static NonEmptyBuzz Subject;
+        static object Result;
     }
 }
