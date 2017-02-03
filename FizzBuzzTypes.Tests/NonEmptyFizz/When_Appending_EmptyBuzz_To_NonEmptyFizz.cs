@@ -17,7 +17,7 @@ namespace FizzBuzzTypes.Tests
                     .Append(new EmptyBuzz());
         };
 
-        It result_is_fizzbuzz = () => Result.ShouldBeOfExactType<NonEmptyFizz>();
+        It result_is_nonemptyfizz = () => Result.ShouldBeOfExactType<NonEmptyFizz>();
 
         It result_is_numberappender = () => Result.ShouldBeAssignableTo<NumberAppender>();
 

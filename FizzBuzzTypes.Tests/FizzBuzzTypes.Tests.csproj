@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="Buzz\When_Appending_Number_To_EmptyBuzz.cs" />
     <Compile Include="Buzz\When_Appending_Number_To_NonEmptyBuzz.cs" />
+    <Compile Include="FizzBuzz\When_ToSTring_Is_Called_On_FizzBuzz.cs" />
     <Compile Include="Buzz\When_ToSTring_Is_Called_On_NonEmptyBuzz.cs" />
     <Compile Include="EmptyFizz\When_Appending_EmptyBuzz_To_EmptyFizz.cs" />
     <Compile Include="EmptyFizz\When_Appending_NonEmptyBuzz_To_EmptyFizz.cs" />

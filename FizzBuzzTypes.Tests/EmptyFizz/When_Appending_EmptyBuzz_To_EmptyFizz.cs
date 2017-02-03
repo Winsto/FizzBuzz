@@ -17,8 +17,9 @@
                     .Append(new EmptyBuzz());
         };
 
-        It result_is_nonemptybuzz = () => Result.ShouldBeOfExactType<EmptyBuzz>();
+        It result_is_emptybuzz = () => Result.ShouldBeOfExactType<EmptyBuzz>();
 
+        It result_is_numberappender = () => Result.ShouldBeAssignableTo<NumberAppender>();
 
         static EmptyFizz Subject;
         static object Result;

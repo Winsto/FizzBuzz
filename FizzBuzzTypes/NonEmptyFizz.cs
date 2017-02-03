@@ -4,7 +4,7 @@ namespace FizzBuzzTypes
     {
         public override string ToString()
         {
-            return "BuzzAppender";
+            return "Fizz";
         }
 
         public NumberAppender Append(NonEmptyBuzz buzz)
