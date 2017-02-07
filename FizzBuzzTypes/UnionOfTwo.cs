@@ -2,7 +2,15 @@
 {
     using System;
 
-    public  abstract class UnionOfTwo<TOne, TTwo>
+    /// <summary>
+    /// A way of representing a Union of two types, inspired by Juliet's 
+    /// answer to this 
+    /// <see href="http://stackoverflow.com/questions/3151702/discriminated-union-in-c-sharp">Stack Overflow</see>
+    /// question.
+    /// </summary>
+    /// <typeparam name="TOne"></typeparam>
+    /// <typeparam name="TTwo"></typeparam>
+    public abstract class UnionOfTwo<TOne, TTwo>
     {
         private readonly UnionOfTwo<TOne, TTwo> inner;
 
