@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{39B1514F-7D75-4127-92B8-A7F269FF8838}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{160CE4FD-7E2C-4415-A78C-19D2736AC5B6}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FizzBuzzTypes</RootNamespace>
-    <AssemblyName>FizzBuzzTypes</AssemblyName>
+    <RootNamespace>Zip_a_Dee_Types</RootNamespace>
+    <AssemblyName>Zip-a-Dee-Types</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -40,20 +42,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Buzzes\Buzz.cs" />
-    <Compile Include="Buzzes\EmptyBuzz.cs" />
-    <Compile Include="Buzzes\NonEmptyBuzz.cs" />
-    <Compile Include="NumberAppender.cs" />
-    <Compile Include="EmptyFizz.cs" />
-    <Compile Include="BuzzAppender.cs" />
-    <Compile Include="FizzBuzz.cs" />
-    <Compile Include="NonEmptyFizz.cs" />
-    <Compile Include="Number.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sequences\InfinteBuzzes.cs" />
-    <Compile Include="Sequences\InfinteFizzes.cs" />
-    <Compile Include="Sequences\NumberExtensions.cs" />
-    <Compile Include="UnionOfTwo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FizzBuzzTypes\FizzBuzzTypes.csproj">
+      <Project>{39B1514F-7D75-4127-92B8-A7F269FF8838}</Project>
+      <Name>FizzBuzzTypes</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

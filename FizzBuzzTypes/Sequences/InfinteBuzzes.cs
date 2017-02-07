@@ -4,13 +4,17 @@
 
     public class InfinteBuzzes
     {
-        public IEnumerable<NumberAppender> Buzzes()
+        public IEnumerable<Buzz> Buzzes()
         {
-            yield return new EmptyBuzz();
-            yield return new EmptyBuzz();
-            yield return new EmptyBuzz();
-            yield return new EmptyBuzz();
-            yield return new NonEmptyBuzz();
+            while (true)
+            {
+                yield return new Buzz(  new EmptyBuzz() );
+                yield return new Buzz(  new EmptyBuzz() );
+                yield return new Buzz(  new EmptyBuzz() );
+                yield return new Buzz(  new EmptyBuzz() );
+                yield return new Buzz(  new NonEmptyBuzz() );
+                
+            }
         }
     }
 }

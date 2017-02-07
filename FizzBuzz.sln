@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FizzBuzzTypes.Tests", "Fizz
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FizzBuzzTypes", "FizzBuzzTypes\FizzBuzzTypes.csproj", "{39B1514F-7D75-4127-92B8-A7F269FF8838}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zip-a-Dee-Types", "Zip-a-Dee-Types\Zip-a-Dee-Types.csproj", "{160CE4FD-7E2C-4415-A78C-19D2736AC5B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{39B1514F-7D75-4127-92B8-A7F269FF8838}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39B1514F-7D75-4127-92B8-A7F269FF8838}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{39B1514F-7D75-4127-92B8-A7F269FF8838}.Release|Any CPU.Build.0 = Release|Any CPU
+		{160CE4FD-7E2C-4415-A78C-19D2736AC5B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{160CE4FD-7E2C-4415-A78C-19D2736AC5B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{160CE4FD-7E2C-4415-A78C-19D2736AC5B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{160CE4FD-7E2C-4415-A78C-19D2736AC5B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
