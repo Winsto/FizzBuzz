@@ -49,6 +49,9 @@
     <Compile Include="NonEmptyFizz.cs" />
     <Compile Include="Number.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sequences\InfinteBuzzes.cs" />
+    <Compile Include="Sequences\InfinteFizzes.cs" />
+    <Compile Include="Sequences\NumberExtensions.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
