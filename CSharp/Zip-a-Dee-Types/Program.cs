@@ -23,18 +23,6 @@
                 Enumerable.Range(1, 100)
                     .Select(i => i.ToNumber());
 
-            var numberAppenders
-                =
-                fizzes
-                    .Zip(
-                        buzzes,
-                        (f, b)
-                            =>
-                                b.Match(
-                                    emptyBuzz => f.Append(emptyBuzz)
-                                    , nonEmptyBuzz => f.Append(nonEmptyBuzz))
-                    );
-
             var fizzbuzznumbers =
                 fizzes
                     .Zip(
