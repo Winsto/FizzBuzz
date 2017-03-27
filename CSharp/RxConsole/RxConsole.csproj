@@ -65,7 +65,9 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BuzzOrEmptyBuzz.cs" />
     <Compile Include="ConsoleObserver.cs" />
+    <Compile Include="FizzOrEmptyFizz.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -27,37 +27,54 @@
                         t => new Number((int) t)
                     );
 
-
-
-            var subscription
+            IObservable<NumberAppender> fizzOrBuzzOrFizzBuzz
                 =
                 Fizzes()
                     .Zip
                     (
                         Buzzes(),
-                        (fizz, buzz) =>
-                            buzz
-                                .Match(
-                                    emptyBuzz => fizz.Append(emptyBuzz)
-                                    , nonEmptyBuzz => fizz.Append(nonEmptyBuzz))
-                    )
+                        (f, b) =>
+                            f.Match
+                            (
+                                fizz =>
+                                    b.Match(
+                                        buzz => fizz.Append(buzz)
+                                        , emptyBuzz => fizz.Append(emptyBuzz)
+                                    )
+                                ,
+                                emptyFizz =>
+                                    b.Match
+                                    (
+                                        buzz => emptyFizz.Append(buzz)
+                                        , emptyBuzz => emptyFizz.Append(emptyBuzz)
+                                    )
+                            )
+                    );
+
+            IObservable<object> finalStream
+                =
+                tickingNumbers
+                    .Take(100)
                     .Zip
                     (
-                        tickingNumbers,
-                        (fb, tn) =>
-                            fb.Append(tn)
-                    )
-                    .Take(100)
+                        fizzOrBuzzOrFizzBuzz,
+                        (number, numberAppender) =>
+                            numberAppender.Append(number)
+                    );
+
+            var subscription
+                =
+                finalStream
                     .Subscribe
                     (
                         new ConsoleObserver<object>()
                     );
 
-                subscription
+            subscription
                 .Dispose();
         }
 
-        static IObservable<BuzzAppender> Fizzes()
+        static IObservable<FizzOrEmptyFizz> Fizzes()
         {
             return 
                 Observable
@@ -68,12 +85,12 @@
                         i => i + 1,
                         i =>
                             i % 3 == 0
-                                ? new NonEmptyFizz() as BuzzAppender
-                                : new EmptyFizz()
+                                ? new FizzOrEmptyFizz(new NonEmptyFizz())
+                                : new FizzOrEmptyFizz(new EmptyFizz())
                     );
         }
 
-        static IObservable<Buzz> Buzzes()
+        static IObservable<BuzzOrEmptyBuzz> Buzzes()
         {
             return
                 Observable
@@ -84,8 +101,8 @@
                         i => i + 1,
                         i =>
                             i % 5 == 0
-                                ? new Buzz(new NonEmptyBuzz())
-                                : new Buzz(new EmptyBuzz())
+                                ? new BuzzOrEmptyBuzz(new NonEmptyBuzz())
+                                :  new BuzzOrEmptyBuzz(new EmptyBuzz())
                     );
         }
     }
