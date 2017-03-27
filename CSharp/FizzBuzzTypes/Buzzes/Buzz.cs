@@ -1,6 +1,6 @@
 ﻿namespace FizzBuzzTypes
 {
-    public sealed class Buzz : UnionOfTwo<EmptyBuzz, NonEmptyBuzz>
+    public sealed class Buzz : Either<EmptyBuzz, NonEmptyBuzz>
     {
         public Buzz(EmptyBuzz item) : base(item)
         {

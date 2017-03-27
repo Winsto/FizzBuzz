@@ -10,9 +10,9 @@
     /// </summary>
     /// <typeparam name="TOne"></typeparam>
     /// <typeparam name="TTwo"></typeparam>
-    public abstract class UnionOfTwo<TOne, TTwo>
+    public abstract class Either<TOne, TTwo>
     {
-        private readonly UnionOfTwo<TOne, TTwo> inner;
+        private readonly Either<TOne, TTwo> inner;
 
         public virtual T Match<T>
         (
@@ -22,21 +22,21 @@
             return inner.Match<T>(typeOneCallback, typeTwoCallback);
         }
 
-        public UnionOfTwo(TOne item)
+        public Either(TOne item)
         { 
             inner = new TypeOne(item);
         }
 
-        public UnionOfTwo(TTwo item)
+        public Either(TTwo item)
         {
             inner = new TypeTwo(item);
         }
 
-        private UnionOfTwo()
+        private Either()
         {
         }
 
-        public sealed class TypeOne : UnionOfTwo<TOne, TTwo>
+        public sealed class TypeOne : Either<TOne, TTwo>
         {
             private readonly TOne item;
 
@@ -51,7 +51,7 @@
             }
         }
 
-        public sealed class TypeTwo : UnionOfTwo<TOne, TTwo>
+        public sealed class TypeTwo : Either<TOne, TTwo>
         {
             private readonly TTwo item;
 
