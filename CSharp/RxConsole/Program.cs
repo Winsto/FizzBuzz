@@ -1,65 +1,85 @@
 ﻿namespace RxConsole
 {
     using System;
+    using System.Reactive;
     using System.Reactive.Linq;
     using System.Reactive.Observable.Aliases;
-    using FizzBuzzTypes;
 
     class Program
     {
         static void Main(string[] args)
         {
-            var oneSecondTicker
+            var halfSecondTicker
                 =
                 Observable
                     .Interval
                     (
                         TimeSpan
-                            .FromSeconds(1)
+                            .FromSeconds(0.5)
                     );
 
-            var tickingNumbers
-                =
-                oneSecondTicker
-                    .Skip(1)
-                    .Map
-                    (
-                        t => new Number((int) t)
-                    );
-
-            IObservable<NumberAppender> fizzOrBuzzOrFizzBuzz
+            IObservable<Either<Unit, Either<FizzBuzz, Either<Fizz, Buzz>>>> fizzesBuzzes
                 =
                 Fizzes()
                     .Zip
                     (
                         Buzzes(),
-                        (f, b) =>
-                            f.Match
+                        (fizzes, buzzes) =>
+                            fizzes.Match
                             (
                                 fizz =>
-                                    b.Match(
-                                        buzz => fizz.Append(buzz)
-                                        , emptyBuzz => fizz.Append(emptyBuzz)
+                                    buzzes.Match(
+                                        buzz => 
+                                        Either<Unit, Either<FizzBuzz, Either<Fizz, Buzz>>>
+                                        .Create(
+                                                Either<FizzBuzz, Either<Fizz, Buzz>>
+                                                .Create(new FizzBuzz()))
+                                        , 
+                                        unit => 
+                                        Either<Unit, Either<FizzBuzz, Either<Fizz, Buzz>>>
+                                        .Create(
+                                            Either<FizzBuzz, Either<Fizz, Buzz>>
+                                            .Create(
+                                                    Either<Fizz, Buzz>
+                                                    .Create(new Fizz())))
                                     )
                                 ,
-                                emptyFizz =>
-                                    b.Match
+                                noFizz =>
+                                    buzzes.Match
                                     (
-                                        buzz => emptyFizz.Append(buzz)
-                                        , emptyBuzz => emptyFizz.Append(emptyBuzz)
+                                        buzz => 
+                                        Either<Unit, Either<FizzBuzz, Either<Fizz, Buzz>>>
+                                        .Create(
+                                                Either<FizzBuzz, Either<Fizz, Buzz>>
+                                                .Create(
+                                                        Either<Fizz, Buzz>
+                                                        .Create(new Buzz())))
+                                        , 
+                                        noBuzz =>
+                                            Either<Unit, Either<FizzBuzz, Either<Fizz, Buzz>>>
+                                                .Create(new Unit())
                                     )
                             )
                     );
 
-            IObservable<object> finalStream
+            IObservable<Either<long, Either<FizzBuzz, Either<Fizz, Buzz>>>> finalStream
                 =
-                tickingNumbers
+                    halfSecondTicker
+                    .Skip(1)
                     .Take(100)
                     .Zip
                     (
-                        fizzOrBuzzOrFizzBuzz,
-                        (number, numberAppender) =>
-                            numberAppender.Append(number)
+                        fizzesBuzzes,
+                        (number, fb) =>
+                            fb.Match(
+                                unit => 
+                                Either<long, Either<FizzBuzz, Either<Fizz, Buzz>>>
+                                .Create(number)
+                                ,
+                                someValue =>
+                                    Either<long, Either<FizzBuzz, Either<Fizz, Buzz>>>
+                                        .Create(someValue)
+                                )
                     );
 
             var subscription
@@ -67,14 +87,14 @@
                 finalStream
                     .Subscribe
                     (
-                        new ConsoleObserver<object>()
+                        new ConsoleObserver<Either<long, Either<FizzBuzz, Either<Fizz, Buzz>>>>()
                     );
 
             subscription
                 .Dispose();
         }
 
-        static IObservable<FizzOrEmptyFizz> Fizzes()
+        static IObservable<Either<Fizz, Unit>> Fizzes()
         {
             return 
                 Observable
@@ -85,12 +105,12 @@
                         i => i + 1,
                         i =>
                             i % 3 == 0
-                                ? new FizzOrEmptyFizz(new NonEmptyFizz())
-                                : new FizzOrEmptyFizz(new EmptyFizz())
+                                ? Either<Fizz, Unit>.Create(new Fizz())
+                                :  Either<Fizz, Unit>.Create(new Unit())
                     );
         }
 
-        static IObservable<BuzzOrEmptyBuzz> Buzzes()
+        static IObservable<Either<Buzz, Unit>> Buzzes()
         {
             return
                 Observable
@@ -101,8 +121,8 @@
                         i => i + 1,
                         i =>
                             i % 5 == 0
-                                ? new BuzzOrEmptyBuzz(new NonEmptyBuzz())
-                                :  new BuzzOrEmptyBuzz(new EmptyBuzz())
+                                ? Either<Buzz, Unit>.Create(new Buzz())
+                                : Either<Buzz, Unit>.Create(new Unit())
                     );
         }
     }

@@ -65,21 +65,17 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BuzzOrEmptyBuzz.cs" />
+    <Compile Include="Buzz.cs" />
     <Compile Include="ConsoleObserver.cs" />
-    <Compile Include="FizzOrEmptyFizz.cs" />
+    <Compile Include="Either.cs" />
+    <Compile Include="Fizz.cs" />
+    <Compile Include="FizzBuzz.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\FizzBuzzTypes\FizzBuzzTypes.csproj">
-      <Project>{39b1514f-7d75-4127-92b8-a7f269ff8838}</Project>
-      <Name>FizzBuzzTypes</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
