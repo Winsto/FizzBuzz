@@ -35,7 +35,7 @@
                                                 Either<FizzBuzz, Either<Fizz, Buzz>>
                                                 .Create(new FizzBuzz()))
                                         , 
-                                        unit => 
+                                        unitBuzz => 
                                         Either<Unit, Either<FizzBuzz, Either<Fizz, Buzz>>>
                                         .Create(
                                             Either<FizzBuzz, Either<Fizz, Buzz>>
@@ -44,7 +44,7 @@
                                                     .Create(new Fizz())))
                                     )
                                 ,
-                                noFizz =>
+                                unitFizz =>
                                     buzzes.Match
                                     (
                                         buzz => 
@@ -55,7 +55,7 @@
                                                         Either<Fizz, Buzz>
                                                         .Create(new Buzz())))
                                         , 
-                                        noBuzz =>
+                                        unitBuzz =>
                                             Either<Unit, Either<FizzBuzz, Either<Fizz, Buzz>>>
                                                 .Create(new Unit())
                                     )
