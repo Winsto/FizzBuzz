@@ -8,26 +8,26 @@
     /// <see href="http://stackoverflow.com/questions/3151702/discriminated-union-in-c-sharp">Stack Overflow</see>
     /// question.
     /// </summary>
-    /// <typeparam name="TOne"></typeparam>
-    /// <typeparam name="TTwo"></typeparam>
-    public abstract class Either<TOne, TTwo>
+    /// <typeparam name="TLeft"></typeparam>
+    /// <typeparam name="TRight"></typeparam>
+    public abstract class Either<TLeft, TRight>
     {
-        private readonly Either<TOne, TTwo> inner;
+        private readonly Either<TLeft, TRight> inner;
 
         public virtual T Match<T>
         (
-            Func<TOne, T> typeOneCallback
-            , Func<TTwo, T> typeTwoCallback)
+            Func<TLeft, T> matchLeftType
+            , Func<TRight, T> matchRightType)
         {
-            return inner.Match<T>(typeOneCallback, typeTwoCallback);
+            return inner.Match<T>(matchLeftType, matchRightType);
         }
 
-        public Either(TOne item)
+        protected Either(TLeft item)
         { 
             inner = new TypeOne(item);
         }
 
-        public Either(TTwo item)
+        protected Either(TRight item)
         {
             inner = new TypeTwo(item);
         }
@@ -36,34 +36,42 @@
         {
         }
 
-        public sealed class TypeOne : Either<TOne, TTwo>
+        private sealed class TypeOne : Either<TLeft, TRight>
         {
-            private readonly TOne item;
+            private readonly TLeft item;
 
-            public TypeOne(TOne item)
+            public TypeOne(TLeft item)
             {
                 this.item = item;
             }
 
-            public override T Match<T>(Func<TOne, T> typeOneCallback, Func<TTwo, T> typeTwoCallback)
+            public override T Match<T>
+            (
+                Func<TLeft, T> matchLeftType
+                , Func<TRight, T> matchRightType
+            )
             {
-                return typeOneCallback(item);
+                return matchLeftType(item);
             }
         }
 
-        public sealed class TypeTwo : Either<TOne, TTwo>
+        private sealed class TypeTwo : Either<TLeft, TRight>
         {
-            private readonly TTwo item;
+            private readonly TRight item;
 
-            public TypeTwo(TTwo item)
+            public TypeTwo(TRight item)
             {
                 this.item = item;
             }
 
 
-            public override T Match<T>(Func<TOne, T> typeOneCallback, Func<TTwo, T> typeTwoCallback)
+            public override T Match<T>
+            (
+                Func<TLeft, T> matchLeftType
+                , Func<TRight, T> matchRightType
+            )
             {
-                return typeTwoCallback(item);
+                return matchRightType(item);
             }
         }
     }
