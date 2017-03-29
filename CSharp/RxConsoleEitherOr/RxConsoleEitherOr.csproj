@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B21597C9-F02E-470E-8804-A4F13FDED87D}</ProjectGuid>
+    <ProjectGuid>{2B999542-0CE9-45EC-A4B4-2F82ED65A809}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>RxConsoleEitherOr</RootNamespace>
     <AssemblyName>RxConsoleEitherOr</AssemblyName>
