@@ -1,4 +1,4 @@
-﻿namespace RxConsole
+﻿namespace RxConsoleFizzBuzzTypes
 {
     using System;
     using System.Reactive.Linq;

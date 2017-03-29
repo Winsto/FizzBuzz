@@ -1,4 +1,4 @@
-﻿namespace RxConsole
+﻿namespace RxConsoleFizzBuzzTypes
 {
     using System;
     public class ConsoleObserver<TObservable> : IObserver<TObservable>

@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{B21597C9-F02E-470E-8804-A4F13FDED87D}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>RxConsole</RootNamespace>
-    <AssemblyName>RxConsole</AssemblyName>
+    <RootNamespace>RxConsoleFizzBuzzTypes</RootNamespace>
+    <AssemblyName>RxConsoleFizzBuzzTypes</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
