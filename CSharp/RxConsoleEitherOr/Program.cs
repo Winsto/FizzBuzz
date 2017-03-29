@@ -1,4 +1,4 @@
-﻿namespace RxConsole
+﻿namespace RxConsoleEitherOr
 {
     using System;
     using System.Reactive;

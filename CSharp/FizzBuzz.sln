@@ -23,7 +23,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FizzBuzzTypes", "FizzBuzzTy
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zip-a-Dee-Types", "Zip-a-Dee-Types\Zip-a-Dee-Types.csproj", "{160CE4FD-7E2C-4415-A78C-19D2736AC5B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RxConsole", "RxConsole\RxConsole.csproj", "{B21597C9-F02E-470E-8804-A4F13FDED87D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RxConsoleEitherOr", "RxConsoleEitherOr\RxConsoleEitherOr.csproj", "{B21597C9-F02E-470E-8804-A4F13FDED87D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

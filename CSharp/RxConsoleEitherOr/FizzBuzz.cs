@@ -1,4 +1,4 @@
-﻿namespace RxConsole
+﻿namespace RxConsoleEitherOr
 {
     public class FizzBuzz
     {

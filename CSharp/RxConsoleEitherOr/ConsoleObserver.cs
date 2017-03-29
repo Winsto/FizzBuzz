@@ -1,4 +1,4 @@
-﻿namespace RxConsole
+﻿namespace RxConsoleEitherOr
 {
     using System;
     public class ConsoleObserver<TObservable> : IObserver<TObservable>
